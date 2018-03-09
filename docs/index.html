@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>MY APP</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <div class="app">
+            <div class="app-header">
+                <h1 class="brand">
+                    MY APP
+                </h1>
+            </div>
+            <div class="app-body">
+                <div class="loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="page page- is-active">
+                    <div class="counter"></div>
+                    <ul class="list" id="list">
+                    
+                    </ul>
+                </div>
+
+                <div class="page page-submit">
+                    <div class="page-progress" id="upload-progress"></div>
+                    <div class="form upload" id="upload-form">
+                        <label for="upload-file" class="attach">
+                            <div class="upload-preview image-preview" id="upload-preview">
+                                <div class="icon"><i class="icon-image"></i></div>
+                            </div>
+                            <div class="upload-label">
+                                Añade una imagen
+                            </div>
+                        </label>
+                        <input name="file" type="file" class="cloudinary_fileupload" id="upload-file"></input>
+                        <textarea type="text" name="description" placeholder="Añade una descripción" id="upload-description" class="upload-description" maxlength="300"></textarea>
+                        <div id="upload-chars" class="chars"></div>
+                    </div>   
+                </div>
+
+                <div class="page page-remove">
+                    <div class="form remove">
+                        <div class="remove-preview image-preview" id="remove-preview"></div>
+                        <div class="remove-description" id="remove-description"></div>
+                        <h4 class="remove-label">¿Eliminar este elemento?</h4>
+                        <button class="remove-submit" id="remove-submit">Eliminar</button>
+                    </div>   
+                </div>
+
+            </div>
+            <div class="app-footer">
+                <button class="add-new" id="addItem"></button>
+            </div>
+        </div>
+        
+        <script type="html/tpl" id="listTpl">
+            <li class="list-item" id="{id}">
+                <div class="handle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                </div>
+                    <div class="left">
+                        <div class="detail">
+                            <div class="image">
+                                <img src="{img_url}">
+                            </div>
+                            <div class="description">
+                                {description}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button class="control edit">
+                            <i class="icon icon-edit"></i>
+                        </button>
+                        <button class="control remove">
+                            <i class="icon icon-trash-2"></i>
+                        </button>
+                    </div>
+            </li>
+        </script>
+        <script type="html/tpl" id="emptyTpl">
+            <div class="form empty">
+                <h4 class="empty-title">Aun no tienes elementos creados</h4>
+            </div>
+        </script>
+        <script src="scripts/app.js"></script>
+    </body>
+</html>
