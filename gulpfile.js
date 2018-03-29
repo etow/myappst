@@ -30,10 +30,10 @@ scripts_src = [
     "node_modules/blueimp-file-upload/js/jquery.fileupload-image.js",
     "node_modules/blueimp-file-upload/js/jquery.fileupload-validate.js",
     "node_modules/sortablejs/sortable.js",
-    "node_modules/firebase/firebase.js",
+    /*"node_modules/firebase/firebase.js",*/
     "node_modules/page/page.js",
     "node_modules/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js",
-    'app/scripts/src/_includes/**/*.js', 'app/scripts/src/**/*.js'
+    'app/scripts/src/**/*.js'
 ];
 
 gulp.task('browserSync', function() {
@@ -74,7 +74,7 @@ gulp.task('scripts-deploy', function() {
                 //this is the filename of the compressed version of our JS
                 .pipe(concat('app.js'))
                 //compress :D
-                .pipe(uglify())
+                /*.pipe(uglify())*/
                 //where we will store our finalized, compressed script
                 .pipe(gulp.dest('docs/scripts'));
 });
